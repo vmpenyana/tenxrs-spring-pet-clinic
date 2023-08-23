@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.tenxrs</groupId>
     <artifactId>tenxrs-spring-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>tenxrs-spring-pet-clinic</name>
     <description>tenxrs-spring-pet-clinic</description>
     <properties>
@@ -52,7 +52,7 @@
         <developerConnection>
             scm:git:git@github.com:vmpenyana/tenxrs-spring-pet-clinic.git
         </developerConnection>
-      <tag>tenxrs-spring-pet-clinic-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>
