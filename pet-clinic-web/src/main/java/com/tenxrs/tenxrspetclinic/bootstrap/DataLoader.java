@@ -55,12 +55,12 @@ public class DataLoader implements CommandLineRunner {
         peter.setLastName("Parker");
 
         Owner ricky = new Owner();
-        ricky.setId(1L);
+        ricky.setId(2L);
         ricky.setFirstName("Ricky");
         ricky.setLastName("Dolphin");
 
         Owner tom = new Owner();
-        tom.setId(1L);
+        tom.setId(3L);
         tom.setFirstName("Tom");
         tom.setLastName("Widmer");
 
