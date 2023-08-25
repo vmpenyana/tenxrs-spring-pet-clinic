@@ -2,9 +2,11 @@ package com.tenxrs.tenxrspetclinic.services.map;
 
 import com.tenxrs.tenxrspetclinic.model.Pet;
 import com.tenxrs.tenxrspetclinic.services.CrudService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
     @Override
     public Set<Pet> findAll() {
