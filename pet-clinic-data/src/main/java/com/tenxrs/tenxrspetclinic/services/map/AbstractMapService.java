@@ -1,13 +1,12 @@
 package com.tenxrs.tenxrspetclinic.services.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import com.tenxrs.tenxrspetclinic.model.BaseEntity;
 
-public abstract class AbstractMapService<T, ID> {
+import java.util.*;
 
-    protected Map<ID, T> map = new HashMap<>();
+public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
+
+    protected Map<Long, T> map = new HashMap<>();
 
     Set<T> findAll() {
         return new HashSet<>(map.values());
@@ -18,7 +17,14 @@ public abstract class AbstractMapService<T, ID> {
     }
 
     T save(ID id, T object) {
-        return map.put(id, object);
+        if(object != null) {
+            if(object.getId() == null) {
+                object.setId(getNextId() );
+            }
+
+            map.put(object.getId(), object);
+        }
+        return object;
     }
 
     void deleteById(ID id) {
@@ -29,4 +35,15 @@ public abstract class AbstractMapService<T, ID> {
         map.entrySet().removeIf(entry -> entry.getValue().equals(object));
     }
 
+    private Long getNextId() {
+        long nextId;
+
+        try {
+            nextId = Collections.max(map.keySet()) + 1;
+        } catch (NoSuchElementException e) {
+            nextId = 1L;
+        }
+
+        return nextId;
+    }
 }
