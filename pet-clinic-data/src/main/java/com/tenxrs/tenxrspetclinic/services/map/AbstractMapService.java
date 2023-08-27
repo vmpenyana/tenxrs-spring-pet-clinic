@@ -6,6 +6,7 @@ import java.util.*;
 
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
+    // some kind of fake database.
     protected Map<Long, T> map = new HashMap<>();
 
     Set<T> findAll() {
