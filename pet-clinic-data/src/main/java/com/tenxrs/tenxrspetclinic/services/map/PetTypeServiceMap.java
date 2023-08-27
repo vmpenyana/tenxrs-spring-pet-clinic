@@ -2,9 +2,11 @@ package com.tenxrs.tenxrspetclinic.services.map;
 
 import com.tenxrs.tenxrspetclinic.model.PetType;
 import com.tenxrs.tenxrspetclinic.services.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override

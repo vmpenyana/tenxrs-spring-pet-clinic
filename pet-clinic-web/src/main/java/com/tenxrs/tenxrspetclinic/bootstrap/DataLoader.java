@@ -1,8 +1,11 @@
 package com.tenxrs.tenxrspetclinic.bootstrap;
 
 import com.tenxrs.tenxrspetclinic.model.Owner;
+import com.tenxrs.tenxrspetclinic.model.Pet;
+import com.tenxrs.tenxrspetclinic.model.PetType;
 import com.tenxrs.tenxrspetclinic.model.Vet;
 import com.tenxrs.tenxrspetclinic.services.OwnerService;
+import com.tenxrs.tenxrspetclinic.services.PetTypeService;
 import com.tenxrs.tenxrspetclinic.services.VetService;
 import com.tenxrs.tenxrspetclinic.services.map.OwnerServiceMap;
 import com.tenxrs.tenxrspetclinic.services.map.VetServiceMap;
@@ -14,10 +17,12 @@ public class DataLoader implements CommandLineRunner {
 
     private final VetService vetService;
     private final OwnerService ownerService;
+    private final PetTypeService petTypeService;
 
-    public DataLoader(VetService vetService, OwnerService ownerService) {
+    public DataLoader(VetService vetService, OwnerService ownerService, PetTypeService petTypeService) {
         this.vetService = vetService;
         this.ownerService = ownerService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
@@ -63,6 +68,23 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(tom);
 
         System.out.println("Loaded Owners!");
+
+        System.out.println("Loading Pet types...");
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+
+        PetType dog = new PetType();
+        cat.setName("Dog");
+
+        PetType reptile = new PetType();
+        cat.setName("Reptile");
+
+        petTypeService.save(cat);
+        petTypeService.save(dog);
+        petTypeService.save(reptile);
+
+        System.out.println("Loaded pet types!");
 
     }
 }
