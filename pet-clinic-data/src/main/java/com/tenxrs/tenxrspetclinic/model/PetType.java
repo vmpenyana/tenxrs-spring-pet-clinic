@@ -1,5 +1,8 @@
 package com.tenxrs.tenxrspetclinic.model;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class PetType extends BaseEntity {
 
     private String name;
