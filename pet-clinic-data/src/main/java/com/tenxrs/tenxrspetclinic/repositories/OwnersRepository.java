@@ -4,4 +4,5 @@ import com.tenxrs.tenxrspetclinic.model.Owner;
 import org.springframework.data.repository.CrudRepository;
 
 public interface OwnersRepository extends CrudRepository<Owner, Long> {
+    Owner findOwnerByLastName(String lastName);
 }
