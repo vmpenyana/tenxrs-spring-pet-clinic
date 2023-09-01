@@ -1,11 +1,15 @@
 package com.tenxrs.tenxrspetclinic.model;
 
-import java.time.LocalDate;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 
+import java.time.LocalDate;
+@Entity
 public class Visit extends BaseEntity {
 
     private LocalDate data;
     private String description;
+    @ManyToOne
     private Pet pet;
 
     public LocalDate getData() {

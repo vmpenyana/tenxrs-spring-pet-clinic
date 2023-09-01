@@ -3,6 +3,7 @@ package com.tenxrs.tenxrspetclinic.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Table(name = "pets")
@@ -18,6 +19,8 @@ public class Pet extends BaseEntity {
     private Owner owner;
     @Column(name = "birth_date")
     private LocalDate birthdate;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<Visit> visits;
 
     public PetType getPetType() {
         return petType;
