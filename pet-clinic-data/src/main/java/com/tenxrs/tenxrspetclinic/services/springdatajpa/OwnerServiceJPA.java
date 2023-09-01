@@ -3,10 +3,14 @@ package com.tenxrs.tenxrspetclinic.services.springdatajpa;
 import com.tenxrs.tenxrspetclinic.model.Owner;
 import com.tenxrs.tenxrspetclinic.repositories.OwnersRepository;
 import com.tenxrs.tenxrspetclinic.services.OwnerService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
+@Profile("springdatajpa")
 public class OwnerServiceJPA implements OwnerService {
 
     private final OwnersRepository ownersRepository;
